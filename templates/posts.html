@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flask App</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<center><h4>Creater New Blog Post</h4></center>
+<hr>
+<form action = '/posts' method='POST'>
+    <div class="form-group">
+    <input class="form-control" type="text" name="title" id="title" placeholder="Enter Title">
+    <br>
+    <textarea class="form-control" type="text" name="content" id="content" rows=4 placeholder="Enter Content For Your Post Here"></textarea>
+    <br>
+    <input class="form-control" type="text" name="author" id="author" placeholder="Enter Author Name">
+    <br>
+    </div>
+    <input type="submit" value="Publish Your Blog Post" class="btn btn-primary">
+</form>
+<hr>
+{% endblock %}

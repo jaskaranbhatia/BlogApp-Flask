@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flask App</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<main role="main">
+    <div class="jumbotron">
+      <div class="col-sm-8 mx-auto">
+        <h1>The Bloging App</h1>
+        <p>Welcome To <b>The Bloging App</b>. The only place on Web where content changes in seconds. Let's see what you have in your mind and how people manipulate it and create stuff worth reading for the world around you.<b>The Only Bounds You Have is you yourself</b></p>
+        <p>Create something the world loves to <b>READ</b> and <b>PLAY</b> with.</p>
+        <p>
+          <a class="btn btn-primary" href="/posts" role="button">Create A Post &raquo;</a>
+        </p>
+      </div>
+    </div>
+  </main>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Recent Posts</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td>{{post.title}}</td>
+          <td>
+            <a class="btn btn-primary btn-sm" href="/posts/edit/{{post.id}}">View</a>
+            <a class="btn btn-danger btn-sm" href="/posts/delete/{{post.id}}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
